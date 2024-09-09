@@ -418,7 +418,7 @@ megatron_options="  \
         --no-save-optim \
         "
 
-run_cmd="torchrun $DISTRIBUTED_ARGS /app/Pai-Megatron-Patch/examples/qwen2/pretrain_qwen.py
+run_cmd="torchrun $DISTRIBUTED_ARGS ./Pai-Megatron-Patch/examples/qwen2/pretrain_qwen.py
  ${megatron_options} ${dataset_option} ${pr_options} ${load_options} ${te_options} ${activation_checkpoint_options} \
  ${do_options} ${sp_options} ${gqa_options} ${offload_option} ${comm_overlap_option} ${sft_option} ${moe_options} ${tie_option} ${vp_options}"
 

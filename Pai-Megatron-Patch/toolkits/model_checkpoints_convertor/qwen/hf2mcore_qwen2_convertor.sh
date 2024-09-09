@@ -161,7 +161,7 @@ fi
 
 DISTRIBUTED_ARGS="--nproc_per_node $TP --nnodes $PP --master_addr $MASTER_ADDR --master_port $MASTER_PORT"
 
-torchrun ${DISTRIBUTED_ARGS} /app/Pai-Megatron-Patch/toolkits/model_checkpoints_convertor/qwen/hf2mcore_qwen2_dense_and_moe_gqa.py \
+torchrun ${DISTRIBUTED_ARGS} ./Pai-Megatron-Patch/toolkits/model_checkpoints_convertor/qwen/hf2mcore_qwen2_dense_and_moe_gqa.py \
     --load ${SOURCE_CKPT_PATH} \
     --save ${TARGET_CKPT_PATH} \
     --target-tensor-model-parallel-size ${TP} \
