@@ -1,0 +1,3 @@
+[submodule "Pai-Megatron-Patch"]
+	path = Pai-Megatron-Patch
+	url = https://github.com/alibaba/Pai-Megatron-Patch.git
