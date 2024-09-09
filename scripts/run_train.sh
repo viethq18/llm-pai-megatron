@@ -3,7 +3,7 @@
 huggingface-cli login --token $HUGGINGFACE_TOKEN
 
 /bin/bash convert_hf2mcore.sh
-ls ./models
+ls /app/models
 
 echo "Convert DONE"
 
@@ -14,9 +14,9 @@ else
 fi
 
 MCORE_MODEL_NAME=$MODEL_NAME-hf-to-mcore-te-tp$NPROC_PER_NODE-pp$NNODES
-TRAINED_CHECKPOINT=./output/output_mcore_qwen2_pretrain
+TRAINED_CHECKPOINT=/app/output/output_mcore_qwen2_pretrain
 
-/bin/bash ./Pai-Megatron-Patch/examples/qwen2/run_mcore_qwen.sh \
+/bin/bash /app/Pai-Megatron-Patch/examples/qwen2/run_mcore_qwen.sh \
     $running \
     1.5B \
     $BATCH_SIZE \
@@ -37,9 +37,9 @@ TRAINED_CHECKPOINT=./output/output_mcore_qwen2_pretrain
     false   \
     false \
     $SAVE_INTERVAL \
-    ./data/${DATASET}_text_document \
-    ./data/${DATASET}_text_document \
-    ./models/$MCORE_MODEL_NAME \
+    /app/data/${DATASET}_text_document \
+    /app/data/${DATASET}_text_document \
+    /app/models/$MCORE_MODEL_NAME \
     $TRAIN_TOKENS_OR_ITER \
     $WARMUP_TOKENS_OR_ITERS \
     $TRAINED_CHECKPOINT
