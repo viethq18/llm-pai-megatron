@@ -14,8 +14,8 @@ if [ "$MODEL_NAME" = "Qwen2-0.5B" ] || \
     file_convert="hf2mcore_qwen2_convertor.sh"
     convert_args="
             1.5B \
-            /app/models/$MODEL_NAME/ \
-            /app/models/$MCORE_MODEL_NAME  \
+            models/$MODEL_NAME/ \
+            models/$MCORE_MODEL_NAME  \
             2 \
             1 \
             1 \
@@ -32,6 +32,6 @@ elif [ "$MODEL_NAME" = "Meta-Llama-3-8B" ] || \
 fi
     
 
-/bin/bash /app/Pai-Megatron-Patch/toolkits/model_checkpoints_convertor/$template/$file_convert $convert_args
+/bin/bash toolkits/model_checkpoints_convertor/$template/$file_convert $convert_args
 
-rm -rf /app/models/Qwen2-1.5B
+rm -rf models/Qwen2-1.5B
