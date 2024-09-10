@@ -34,4 +34,4 @@ fi
 
 /bin/bash toolkits/model_checkpoints_convertor/$template/$file_convert $convert_args
 
-rm -rf models/Qwen2-1.5B
+# rm -rf models/Qwen2-1.5B

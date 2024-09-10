@@ -401,7 +401,7 @@ megatron_options="  \
         --context-parallel-size ${CP} \
         --no-load-optim \
         --no-load-rng \
-        --num-workers 128 \
+        --num-workers 8 \
         --extra-vocab-size ${EXTRA_VOCAB_SIZE} \
         --patch-tokenizer-type Qwen2Tokenizer \
         --swiglu \
